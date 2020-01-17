@@ -37,3 +37,16 @@ WIN_InitModes(_THIS)
 }
 
 ---------------
+
+#if defined(_MSC_VER) && _MSC_VER <= 1200
+#undef SDL_DYNAMIC_API
+#define SDL_DYNAMIC_API 0
+#endif
+
+------------------
+
+predefine DECLSPEC="":
+
+WIN32,_DEBUG,_CONSOLE,_MBCS,DECLSPEC=""
+
+------------------
